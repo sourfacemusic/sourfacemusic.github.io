@@ -1,6 +1,13 @@
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 
+if (!document.querySelector('link[href="playlist.css"]')) {
+  const playlistStyles = document.createElement('link');
+  playlistStyles.rel = 'stylesheet';
+  playlistStyles.href = 'playlist.css';
+  document.head.appendChild(playlistStyles);
+}
+
 const tracks = [
   {
     title: 'HOODLUM',
