@@ -11,8 +11,13 @@ if (!document.querySelector('link[href="playlist.css"]')) {
 const tracks = [
   {
     title: 'HOODLUM',
-    meta: 'prod by SOURFACEMUSIC • 0:26',
+    meta: 'prod by SOURFACEMUSIC • leveled preview • 0:26',
     src: 'assets/audio/hoodlum-prod-by-sourfacemusic.mp3'
+  },
+  {
+    title: 'U ALREADY',
+    meta: 'prod by SOURFACEMUSIC • leveled preview • 0:26',
+    src: 'assets/audio/u-already-prod-by-sourfacemusic.mp3'
   }
 ];
 
