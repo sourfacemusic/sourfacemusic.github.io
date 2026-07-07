@@ -19,8 +19,6 @@
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX');
   </script>
-  <!-- Google Sign-In -->
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -31,8 +29,9 @@
     </a>
     <nav class="nav" aria-label="Main navigation">
       <a href="#services">Services</a>
-      <a href="#music" id="music-nav-link">Music</a>
-      <a href="#about">About</a>
+      <a href="#rooms">Rooms</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Book</a>
       <a href="privacy.html">Privacy</a>
     </nav>
@@ -45,7 +44,7 @@
         <p class="lead">S.F.M. helps artists, creators, and brands shape raw ideas into music that feels ready for the world.</p>
         <div class="actions">
           <a class="button primary" href="#contact">Book a session</a>
-          <a class="button" href="#music" id="hero-music-link">Hear example sounds</a>
+          <a class="button" href="#rooms">Explore Rooms</a>
         </div>
       </div>
       <div class="hero-card">
@@ -59,11 +58,13 @@
         </ul>
       </div>
     </section>
+
     <section class="stats">
       <div><strong>Music-first</strong><span>Built for artists and creators</span></div>
       <div><strong>Flexible</strong><span>Remote or local workflow</span></div>
       <div><strong>Release-ready</strong><span>Organized files and clean delivery</span></div>
     </section>
+
     <section id="services" class="section">
       <div class="section-head">
         <p class="eyebrow">Services</p>
@@ -76,57 +77,197 @@
         <article class="card"><h3>Mix Prep</h3><p>Session cleanup, file organization, stems, rough balance, and delivery notes for engineers or collaborators.</p></article>
       </div>
     </section>
-    <section id="music" class="section split music-showcase">
-      <div>
-        <p class="eyebrow">Example sounds</p>
-        <h2>Tap Music and let the playlist run.</h2>
-        <p>The player rotates through the example tracks and loops back around automatically. Browser rules require a tap before audio with sound can start.</p>
-        <div class="playlist-actions">
-          <button class="button primary" type="button" id="playlist-play">Play playlist</button>
-          <button class="button" type="button" id="playlist-next">Next track</button>
+
+    <!-- ROOMS SECTION -->
+    <section id="rooms" class="section">
+      <div class="section-head">
+        <p class="eyebrow">The Rooms</p>
+        <h2>Explore SOURFACEMUSIC's World</h2>
+        <p>Music • Education • Books • Beats • Merch • Live</p>
+      </div>
+      
+      <div class="rooms-grid">
+        <!-- MUSIC ROOM -->
+        <div class="room-card">
+          <div class="room-header red">
+            <span class="room-icon">🎵</span>
+            <h3>MUSIC ROOM</h3>
+          </div>
+          <div class="room-body">
+            <p>Mixtapes, tracks, and vibes from SOURFACEMUSIC.</p>
+            <div class="room-links">
+              <a href="https://soundcloud.com/sourfacemusic/" target="_blank" class="link-btn">🎧 SoundCloud</a>
+              <a href="https://www.youtube.com/@SOURFACEMUSIC4LIFE" target="_blank" class="link-btn">▶️ YouTube</a>
+              <a href="https://vimeo.com/sourfacemusic/" target="_blank" class="link-btn">🎬 Vimeo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BEATS ROOM -->
+        <div class="room-card">
+          <div class="room-header purple">
+            <span class="room-icon">🎶</span>
+            <h3>BEATS SHOP</h3>
+          </div>
+          <div class="room-body">
+            <p>Lease or buy exclusive beats from SOURFACEMUSIC.</p>
+            <div class="room-links">
+              <a href="https://soundcloud.com/sourfacemusic/" target="_blank" class="link-btn">🎧 SoundCloud</a>
+              <a href="https://www.youtube.com/@SOURFACEMUSIC4LIFE" target="_blank" class="link-btn">▶️ YouTube</a>
+              <a href="https://www.facebook.com/sfacemusic/" target="_blank" class="link-btn">📘 Facebook</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCHOOL ROOM -->
+        <div class="room-card">
+          <div class="room-header cyan">
+            <span class="room-icon">🎓</span>
+            <h3>SCHOOL ROOM</h3>
+          </div>
+          <div class="room-body">
+            <p>Online courses, podcast interviews, and consulting.</p>
+            <div class="room-links">
+              <a href="https://www.youtube.com/@SOURFACEMUSIC4LIFE" target="_blank" class="link-btn">📚 YouTube Classes</a>
+              <a href="https://www.youtube.com/@SOURFACEMUSIC4LIFE" target="_blank" class="link-btn">🎙️ Podcast</a>
+              <a href="#contact" class="link-btn">💬 Consulting</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- AUDIOBOOKS ROOM -->
+        <div class="room-card">
+          <div class="room-header green">
+            <span class="room-icon">📚</span>
+            <h3>AUDIOBOOKS</h3>
+          </div>
+          <div class="room-body">
+            <p>Stories, guides, and music theory audiobooks.</p>
+            <div class="room-links">
+              <a href="https://www.project-gutenberg.org/" target="_blank" class="link-btn">📖 Project Gutenberg</a>
+              <a href="https://open.spotify.com/search/audiobooks" target="_blank" class="link-btn">🎧 Spotify</a>
+              <a href="https://www.youtube.com/@SOURFACEMUSIC4LIFE" target="_blank" class="link-btn">▶️ YouTube Audio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- GEAR SHOP -->
+        <div class="room-card">
+          <div class="room-header orange">
+            <span class="room-icon">👕</span>
+            <h3>GEAR SHOP</h3>
+          </div>
+          <div class="room-body">
+            <p>T-shirts, hats, beats, and official merch.</p>
+            <div class="room-links">
+              <a href="https://printful.com/p/sourfacemusic" target="_blank" class="link-btn">🛍️ Store</a>
+              <a href="https://gumroad.com/" target="_blank" class="link-btn">🎁 Merch</a>
+              <a href="https://soundcloud.com/sourfacemusic/" target="_blank" class="link-btn">🎶 Beats</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- LIVE ROOM -->
+        <div class="room-card">
+          <div class="room-header magenta">
+            <span class="room-icon">🔴</span>
+            <h3>LIVE ROOM</h3>
+          </div>
+          <div class="room-body">
+            <p>Live DJ broadcasts, podcast recordings, and streams.</p>
+            <div class="room-links">
+              <a href="https://www.youtube.com/@SOURFACEMUSIC4LIFE" target="_blank" class="link-btn">▶️ YouTube Live</a>
+              <a href="https://www.youtube.com/@SOURFACEMUSIC4LIFE" target="_blank" class="link-btn">📻 DJ Radio</a>
+              <a href="https://www.youtube.com/@SOURFACEMUSIC4LIFE" target="_blank" class="link-btn">🎙️ Podcast Streams</a>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="player-card" id="example-sounds-player">
-        <div class="player-topline"><span>Now playing</span><strong id="track-count">1 / 1</strong></div>
-        <h3 id="track-title">HOODLUM</h3>
-        <p class="muted" id="track-meta">prod by SOURFACEMUSIC • 0:26</p>
-        <audio id="music-player" controls preload="metadata"></audio>
-        <div class="track-list" id="track-list" aria-label="Example sounds playlist"></div>
-        <p class="small">Playlist loops automatically after the last track.</p>
-      </div>
     </section>
-    <section id="about" class="section">
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="section">
       <div class="section-head">
-        <p class="eyebrow">About</p>
-        <h2>S.F.M. is built around music, discipline, and getting work finished.</h2>
-      </div>
-      <p class="wide">SourFaceMusic is a music production company focused on helping artists move from idea to finished product. Whether you need beats, remix work, creative direction, or help organizing and releasing music, we bring years of production experience and a commitment to finishing the work.</p>
-    </section>
-    <section id="socials" class="section">
-      <div class="section-head">
-        <p class="eyebrow">Follow</p>
-        <h2>Stay connected.</h2>
-      </div>
-      <div class="actions">
-        <a class="button" href="https://www.youtube.com/@SOURFACEMUSIC4LIFE" target="_blank">YouTube</a>
-        <a class="button" href="https://www.tiktok.com/@sourfacemusic" target="_blank">TikTok</a>
-        <a class="button" href="https://soundcloud.com/sourfacemusic/" target="_blank">SoundCloud</a>
-        <a class="button" href="https://www.facebook.com/sfacemusic/" target="_blank">Facebook</a>
-        <a class="button" href="https://vimeo.com/sourfacemusic/" target="_blank">Vimeo</a>
-      </div>
-    </section>
-    <section id="store" class="section">
-      <div class="section-head">
-        <p class="eyebrow">Store</p>
-        <h2>Get beats and music.</h2>
+        <p class="eyebrow">Portfolio</p>
+        <h2>Past Work & Collaborations</h2>
       </div>
       <div class="grid cards">
-        <a class="card shop" href="https://soundcloud.com/sourfacemusic/" target="_blank"><h3>Beats</h3><p>Lease or buy exclusive production.</p></a>
-        <a class="card shop" href="https://soundcloud.com/sourfacemusic/" target="_blank"><h3>Digital Downloads</h3><p>Singles, albums, edits, and packs.</p></a>
-        <a class="card shop" href="https://soundcloud.com/sourfacemusic/" target="_blank"><h3>Catalog</h3><p>Full collection of productions.</p></a>
-        <a class="card shop" href="https://www.facebook.com/sfacemusic/" target="_blank"><h3>Merch</h3><p>Official SOURFACEMUSIC drops.</p></a>
+        <article class="card">
+          <h3>Hip Hop Culture</h3>
+          <p>Worked with Harlem 6, Treach (Naughty by Nature), and RZA from Wu-Tang Clan on collaborative projects.</p>
+        </article>
+        <article class="card">
+          <h3>Youth Education</h3>
+          <p>Teaching DJ culture and hip hop history at SEBNC in the Bronx. Empowering the next generation of artists.</p>
+        </article>
+        <article class="card">
+          <h3>Production Work</h3>
+          <p>Beats, remix blends, and creative direction for independent artists and media projects worldwide.</p>
+        </article>
+        <article class="card">
+          <h3>Creative Partnerships</h3>
+          <p>Long-standing creative relationship with Brockett Parsons, Berklee College graduate and accomplished musician.</p>
+        </article>
       </div>
     </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="section testimonials">
+      <div class="section-head">
+        <p class="eyebrow">Testimonials</p>
+        <h2>What Artists Say</h2>
+      </div>
+      <div class="grid cards">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"SOURFACEMUSIC turned my rough idea into a finished track that's ready for release. Professional, focused, and got the work done."</p>
+          <p class="testimonial-author">— Independent Artist</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"The remix blends are fire. Clean edits, perfect for live performances. Highly recommend for DJs and producers."</p>
+          <p class="testimonial-author">— DJ Producer</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Teaching hip hop history and DJ culture with authenticity. This is real music education grounded in the actual culture."</p>
+          <p class="testimonial-author">— Student, SEBNC</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="section faq">
+      <div class="section-head">
+        <p class="eyebrow">FAQ</p>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-items">
+        <details class="faq-item">
+          <summary>How long does a beat production take?</summary>
+          <p>Turnaround is typically 3-7 days depending on complexity and revisions. Rush orders available.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you offer leasing or exclusive rights?</summary>
+          <p>Both! Leasing rights for immediate use, exclusive licensing available for artists wanting sole ownership.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What's your remix process?</summary>
+          <p>We take your original track and create clean, performance-ready blends optimized for DJ sets and performances.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can you help with artist development?</summary>
+          <p>Yes. We offer guidance on song selection, rollout strategy, branding, and catalog organization.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you offer consulting services?</summary>
+          <p>Absolutely. Book a session to discuss your project, goals, and get custom recommendations.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I purchase merch or beats?</summary>
+          <p>Visit our Gear Shop for official merch, or access beats directly through SoundCloud, YouTube, and Facebook.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACT / BOOKING -->
     <section id="contact" class="section contact">
       <div>
         <p class="eyebrow">Booking</p>
@@ -163,6 +304,7 @@
               <option value="remix-blends">Remix Blends</option>
               <option value="artist-development">Artist Development</option>
               <option value="mix-prep">Mix Prep</option>
+              <option value="consulting">Consulting</option>
               <option value="other">Other</option>
             </select>
           </div>
@@ -171,7 +313,26 @@
         </form>
       </div>
     </section>
+
+    <!-- SOCIALS / LIVE SECTION -->
+    <section class="section socials">
+      <div class="section-head">
+        <p class="eyebrow">Connect</p>
+        <h2>Follow & Go Live</h2>
+      </div>
+      <div class="actions">
+        <a class="button" href="https://www.youtube.com/@SOURFACEMUSIC4LIFE" target="_blank">YouTube</a>
+        <a class="button" href="https://www.tiktok.com/@sourfacemusic" target="_blank">TikTok</a>
+        <a class="button" href="https://soundcloud.com/sourfacemusic/" target="_blank">SoundCloud</a>
+        <a class="button" href="https://www.facebook.com/sfacemusic/" target="_blank">Facebook</a>
+        <a class="button" href="https://vimeo.com/sourfacemusic/" target="_blank">Vimeo</a>
+      </div>
+      <p style="text-align:center;margin-top:2rem;font-size:0.9rem;color:var(--muted);">
+        🎙️ Podcast Interviews & DJ Radio coming soon. Set up with ATEM Mini Pro + OBS for live broadcasts.
+      </p>
+    </section>
   </main>
+
   <footer class="footer"><p>© <span id="year"></span> SourFaceMusic. All rights reserved.</p><p><a href="privacy.html">Privacy</a> · <a href="#top">Back to top</a></p></footer>
   <script src="script.js"></script>
 </body>
