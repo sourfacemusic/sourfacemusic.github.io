@@ -1,6 +1,14 @@
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 
+// Google Analytics tracking
+if (typeof gtag !== 'undefined') {
+  gtag('event', 'page_view', {
+    'page_path': window.location.pathname,
+    'page_title': document.title
+  });
+}
+
 if (!document.querySelector('link[href="playlist.css"]')) {
   const playlistStyles = document.createElement('link');
   playlistStyles.rel = 'stylesheet';
@@ -48,6 +56,14 @@ function loadTrack(index, shouldPlay = false) {
       if (playButton) playButton.textContent = 'Tap to play';
     });
   }
+  
+  // Track audio interaction
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'music_track_loaded', {
+      'track_title': track.title,
+      'track_index': currentTrack + 1
+    });
+  }
 }
 
 function startPlaylist() {
@@ -73,6 +89,11 @@ if (player) {
   loadTrack(0, false);
   player.addEventListener('play', () => {
     if (playButton) playButton.textContent = 'Playing';
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'music_played', {
+        'track_title': tracks[currentTrack].title
+      });
+    }
   });
   player.addEventListener('pause', () => {
     if (playButton) playButton.textContent = 'Play playlist';
@@ -84,3 +105,66 @@ if (playButton) playButton.addEventListener('click', startPlaylist);
 if (nextButton) nextButton.addEventListener('click', () => nextTrack(true));
 if (musicNavLink) musicNavLink.addEventListener('click', () => setTimeout(startPlaylist, 350));
 if (heroMusicLink) heroMusicLink.addEventListener('click', () => setTimeout(startPlaylist, 350));
+
+// Booking form handling
+const bookingForm = document.getElementById('booking-form');
+if (bookingForm) {
+  bookingForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(bookingForm);
+    const data = {
+      artistName: formData.get('artistName'),
+      email: formData.get('email'),
+      projectIdea: formData.get('projectIdea'),
+      deadline: formData.get('deadline'),
+      links: formData.get('links'),
+      helpNeeded: formData.get('helpNeeded'),
+      timestamp: new Date().toISOString()
+    };
+    
+    // Track booking inquiry
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'booking_inquiry', {
+        'artist_name': data.artistName,
+        'service_type': data.helpNeeded
+      });
+    }
+    
+    // Send to email via FormSubmit.co (free service)
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/booking@sourfacemusic.com', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        alert('✅ Booking inquiry sent! We\'ll get back to you soon.');
+        bookingForm.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Form error:', error);
+      // Fallback to email
+      window.location.href = `mailto:booking@sourfacemusic.com?subject=Booking Inquiry from ${encodeURIComponent(data.artistName)}&body=${encodeURIComponent(JSON.stringify(data, null, 2))}`;
+    }
+  });
+}
+
+// Social link tracking
+document.querySelectorAll('a[target="_blank"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const href = link.getAttribute('href');
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'social_link_click', {
+        'link_url': href,
+        'link_text': link.textContent
+      });
+    }
+  });
+});
