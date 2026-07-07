@@ -11,6 +11,16 @@
   <meta name="theme-color" content="#0b0b0f">
   <meta name="google-adsense-account" content="ca-pub-5559716494726644">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5559716494726644" crossorigin="anonymous"></script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <!-- Google Sign-In -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -124,8 +134,41 @@
         <p>Send your artist name, song idea, links, deadline, and what you need help with.</p>
       </div>
       <div class="contact-card">
-        <a class="button primary full" href="mailto:booking@sourfacemusic.com?subject=Booking%20Inquiry">Email booking</a>
-        <a class="button full" href="#music">Hear example sounds</a>
+        <form id="booking-form" class="booking-form">
+          <div class="form-group">
+            <label for="artist-name">Artist Name</label>
+            <input type="text" id="artist-name" name="artistName" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="project-idea">Song Idea / Project</label>
+            <textarea id="project-idea" name="projectIdea" rows="4" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="deadline">Deadline</label>
+            <input type="date" id="deadline" name="deadline">
+          </div>
+          <div class="form-group">
+            <label for="links">Links (SoundCloud, YouTube, etc.)</label>
+            <input type="url" id="links" name="links" placeholder="https://...">
+          </div>
+          <div class="form-group">
+            <label for="help-needed">What do you need help with?</label>
+            <select id="help-needed" name="helpNeeded" required>
+              <option value="">Select...</option>
+              <option value="beat-production">Beat Production</option>
+              <option value="remix-blends">Remix Blends</option>
+              <option value="artist-development">Artist Development</option>
+              <option value="mix-prep">Mix Prep</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <button type="submit" class="button primary full">Send Inquiry</button>
+          <p class="small" style="text-align:center;margin-top:1rem;">Or email directly: <a href="mailto:booking@sourfacemusic.com">booking@sourfacemusic.com</a></p>
+        </form>
       </div>
     </section>
   </main>
