@@ -168,3 +168,50 @@ document.querySelectorAll('a[target="_blank"]').forEach(link => {
     }
   });
 });
+
+// Cookiebot CMP integration for this static GitHub Pages site.
+// Keep the Domain Group ID private until it is entered through a controlled update.
+(() => {
+  const COOKIEBOT_DOMAIN_GROUP_ID = '';
+  const validCookiebotId = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+
+  if (!validCookiebotId.test(COOKIEBOT_DOMAIN_GROUP_ID)) {
+    console.info('Cookiebot CMP files are installed but inactive until a valid Domain Group ID is configured.');
+    return;
+  }
+
+  if (!document.getElementById('Cookiebot')) {
+    const cookiebotScript = document.createElement('script');
+    cookiebotScript.id = 'Cookiebot';
+    cookiebotScript.src = 'https://consent.cookiebot.com/uc.js';
+    cookiebotScript.type = 'text/javascript';
+    cookiebotScript.dataset.cbid = COOKIEBOT_DOMAIN_GROUP_ID;
+    cookiebotScript.dataset.blockingmode = 'auto';
+    document.head.insertBefore(cookiebotScript, document.head.firstChild);
+  }
+
+  const addCookieSettingsLink = () => {
+    const footer = document.querySelector('.footer p:last-child');
+    if (!footer || document.getElementById('cookie-settings-link')) return;
+
+    const separator = document.createTextNode(' · ');
+    const link = document.createElement('a');
+    link.id = 'cookie-settings-link';
+    link.href = '#';
+    link.textContent = 'Cookie settings';
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      if (window.Cookiebot && typeof window.Cookiebot.renew === 'function') {
+        window.Cookiebot.renew();
+      }
+    });
+
+    footer.append(separator, link);
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', addCookieSettingsLink);
+  } else {
+    addCookieSettingsLink();
+  }
+})();
