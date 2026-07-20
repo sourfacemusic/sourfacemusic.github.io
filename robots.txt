@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /gofundme.html
+
+Sitemap: https://sourfacemusic.github.io/sitemap.xml
