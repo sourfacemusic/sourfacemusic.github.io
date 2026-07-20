@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+<title id="title">SOURFACEMUSIC cosmic square artwork</title><desc id="desc">A red and black cosmic portal with a large S.F.M. logo and smaller repeated logos.</desc>
+<defs>
+  <radialGradient id="bg"><stop stop-color="#4a0015"/><stop offset=".42" stop-color="#110007"/><stop offset="1" stop-color="#010104"/></radialGradient>
+  <radialGradient id="ring"><stop stop-color="#fff8e7"/><stop offset=".12" stop-color="#ff795e"/><stop offset=".38" stop-color="#e51742"/><stop offset=".66" stop-color="#540013"/><stop offset="1" stop-color="#050006" stop-opacity="0"/></radialGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="grain"><feTurbulence baseFrequency=".75" numOctaves="4" seed="24"/><feColorMatrix values="1 0 0 0 .35 0 .1 0 0 0 0 0 .1 0 0 0 0 0 .32 0"/></filter>
+  <pattern id="marks" width="270" height="220" patternUnits="userSpaceOnUse"><text x="32" y="70" fill="#ff355e" fill-opacity=".28" font-family="Arial Black,Arial" font-size="34">S.F.M.</text><path d="M25 25h118v72H25z" fill="none" stroke="#ff355e" stroke-opacity=".15"/></pattern>
+</defs>
+<rect width="1200" height="1200" fill="url(#bg)"/><rect width="1200" height="1200" fill="url(#marks)"/><rect width="1200" height="1200" filter="url(#grain)" opacity=".5"/>
+<g transform="translate(600 610)"><circle r="430" fill="url(#ring)"/><circle r="295" fill="#020205" stroke="#ff355e" stroke-width="15" filter="url(#glow)"/><circle r="225" fill="none" stroke="#ffcfaf" stroke-width="3" stroke-dasharray="6 20" opacity=".72"/>
+<path d="M0 285c-30 0-55-18-62-47l-23-94c-7-28 8-56 35-67l22-9-14-42c-8-30 10-60 41-67 31-6 62 14 68 45l8 50 25 9c28 10 44 39 38 68l-23 105c-6 29-33 46-62 46z" fill="#050508" stroke="#ff6378" stroke-width="5"/></g>
+<text x="600" y="605" text-anchor="middle" fill="#0d0004" stroke="#ff4e6c" stroke-width="7" filter="url(#glow)" font-family="Arial Black,Arial" font-size="230" letter-spacing="12">S.F.M.</text>
+<text x="600" y="730" text-anchor="middle" fill="#ffd4c5" font-family="Arial,Helvetica" font-size="44" font-weight="700" letter-spacing="18">SOUR FACE MUSIC</text>
+<g fill="#ff4265" font-family="Arial Black,Arial" font-size="30" opacity=".78"><text x="70" y="105">S.F.M.</text><text x="970" y="110">S.F.M.</text><text x="85" y="1110">S.F.M.</text><text x="965" y="1090">S.F.M.</text></g>
+</svg>
