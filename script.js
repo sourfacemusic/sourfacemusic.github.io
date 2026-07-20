@@ -157,14 +157,79 @@ if (bookingForm) {
 }
 
 // Social link tracking
-document.querySelectorAll('a[target="_blank"]').forEach(link => {
-  link.addEventListener('click', (e) => {
+ document.querySelectorAll('a[target="_blank"]').forEach(link => {
+  link.addEventListener('click', () => {
     const href = link.getAttribute('href');
     if (typeof gtag !== 'undefined') {
       gtag('event', 'social_link_click', {
         'link_url': href,
         'link_text': link.textContent
       });
+    }
+  });
+});
+
+// Official fundraiser click tracking
+ document.querySelectorAll('[data-fundraiser-link]').forEach(link => {
+  link.addEventListener('click', () => {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'fundraiser_click', {
+        'page_path': window.location.pathname,
+        'link_text': link.textContent.trim()
+      });
+    }
+  });
+});
+
+// Native share button with a copy-link fallback
+ document.querySelectorAll('[data-share]').forEach(button => {
+  button.addEventListener('click', async () => {
+    const shareData = {
+      title: button.dataset.shareTitle || document.title,
+      text: button.dataset.shareText || '',
+      url: button.dataset.shareUrl || window.location.href
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else if (navigator.clipboard) {
+        await navigator.clipboard.writeText(shareData.url);
+        button.textContent = 'Link copied';
+        window.setTimeout(() => {
+          button.textContent = 'Share this fundraiser';
+        }, 2200);
+      } else {
+        window.prompt('Copy this fundraiser link:', shareData.url);
+      }
+
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'fundraiser_share', {
+          'share_url': shareData.url
+        });
+      }
+    } catch (error) {
+      if (error && error.name !== 'AbortError') console.error('Share error:', error);
+    }
+  });
+});
+
+// Dedicated copy-link cards
+ document.querySelectorAll('[data-copy-url]').forEach(button => {
+  button.addEventListener('click', async () => {
+    const url = button.dataset.copyUrl || window.location.href;
+    const status = document.querySelector('.copy-status');
+
+    try {
+      if (navigator.clipboard) {
+        await navigator.clipboard.writeText(url);
+        if (status) status.textContent = 'Support-page link copied.';
+      } else {
+        window.prompt('Copy this fundraiser link:', url);
+      }
+    } catch (error) {
+      console.error('Copy error:', error);
+      if (status) status.textContent = 'Copy failed. Select the address from your browser.';
     }
   });
 });
