@@ -61,13 +61,15 @@ jobs:
         uses: actions/configure-pages@v6
 
       - name: Upload website artifact
-        uses: actions/upload-pages-artifact@v4
+        # Official GitHub commit using actions/upload-artifact v7.0.1 on Node.js 24.
+        uses: actions/upload-pages-artifact@98ef48e41587a300b82de4cf298aa98b57b2faae
         with:
           path: "."
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        # Official GitHub commit that declares runs.using: node24.
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128
 
   verify-live-site:
     needs: deploy
