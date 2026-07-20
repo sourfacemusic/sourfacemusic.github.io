@@ -1,9 +1,11 @@
-name: Deploy SOURFACEMUSIC website
+name: Publish and verify SOURFACEMUSIC
 
 on:
   push:
     branches: ["main"]
   workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
 
 permissions:
   contents: read
@@ -11,15 +13,46 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: "sourfacemusic-pages"
+  cancel-in-progress: true
 
 jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v6
+
+      - name: Verify required website files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f index.html
+          test -f support.html
+          test -f links.html
+          test -f styles.css
+          test -f script.js
+          test -f site-config.js
+          test -f assets/sfm-cosmic-banner.svg
+          test -f assets/sfm-cosmic-square.svg
+          test -f assets/sfm-cosmic-story.svg
+          grep -q "SOURFACEMUSIC" index.html
+          grep -q "Official GoFundMe" support.html
+
+      - name: Check internal links and HTML
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --offline --accept 200,403,429 './**/*.html' './**/*.md'
+          fail: true
+
   deploy:
+    needs: validate
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Check out website
         uses: actions/checkout@v6
@@ -35,3 +68,21 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  verify-live-site:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for GitHub Pages and verify public pages
+        shell: bash
+        env:
+          SITE_URL: ${{ needs.deploy.outputs.page_url }}
+        run: |
+          set -euo pipefail
+          base="${SITE_URL%/}"
+          for page in "/" "/support.html" "/links.html" "/site-config.js"; do
+            echo "Checking ${base}${page}"
+            curl --fail --location --silent --show-error \
+              --retry 12 --retry-delay 10 --retry-all-errors \
+              "${base}${page}" > /dev/null
+          done
