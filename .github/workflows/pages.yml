@@ -36,6 +36,8 @@ jobs:
           test -f assets/sfm-cosmic-banner.svg
           test -f assets/sfm-cosmic-square.svg
           test -f assets/sfm-cosmic-story.svg
+          test -f .well-known/discord
+          test "$(cat .well-known/discord)" = "dh=95912089b76e20525acc32bd3846d4e199c70867"
           grep -q "SOURFACEMUSIC" index.html
           grep -q "Official GoFundMe" support.html
 
@@ -65,6 +67,7 @@ jobs:
         uses: actions/upload-pages-artifact@98ef48e41587a300b82de4cf298aa98b57b2faae
         with:
           path: "."
+          include-hidden-files: "true"
 
       - name: Deploy to GitHub Pages
         id: deployment
@@ -88,3 +91,8 @@ jobs:
               --retry 12 --retry-delay 10 --retry-all-errors \
               "${base}${page}" > /dev/null
           done
+          echo "Checking ${base}/.well-known/discord"
+          verification="$(curl --fail --location --silent --show-error \
+            --retry 12 --retry-delay 10 --retry-all-errors \
+            "${base}/.well-known/discord")"
+          test "$verification" = "dh=95912089b76e20525acc32bd3846d4e199c70867"
