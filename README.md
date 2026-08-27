@@ -12,7 +12,7 @@ This repository is the single source of truth for the public SOURFACEMUSIC websi
 
 ## Change public information once
 
-Edit **`site-config.js`** whenever the phone number, email address, website address, fundraiser link or social handle changes. The website pages read those details from that central file.
+Edit **`site-config.js`** whenever the phone number, email address, website address, fundraiser page link, official GoFundMe destination URL or social handle changes. The website pages read those details from that central file.
 
 Social profile copy is stored in **`SOCIAL_MEDIA.md`**.
 

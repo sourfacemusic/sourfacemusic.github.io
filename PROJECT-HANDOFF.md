@@ -43,7 +43,8 @@ Edit `site-config.js` to change:
 - phone number
 - location
 - official website address
-- fundraiser address
+- fundraiser page address
+- official GoFundMe destination URL
 - social handles
 - artwork paths
 - primary short bio
