@@ -21,7 +21,7 @@ https://sourfacemusic.github.io/support.html
 ## Contact
 
 - Email: sourfacemusic@gmail.com
-- Phone: (646) 286-7210
+- Phone: (917) 675-8184
 - Location: New York, NY
 
 ## Official pages

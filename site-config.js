@@ -8,8 +8,8 @@ window.SFM_CONFIG = Object.freeze({
   fundraiserPage: 'https://sourfacemusic.github.io/support.html',
   fundraiserExternalUrl: 'https://www.gofundme.com/f/help-save-our-kids-before-the-streets-get-them-first',
   email: 'sourfacemusic@gmail.com',
-  phoneDisplay: '(646) 286-7210',
-  phoneHref: '+16462867210',
+  phoneDisplay: '(917) 675-8184',
+  phoneHref: '+19176758184',
   location: 'New York, NY',
   artwork: {
     banner: 'assets/sfm-cosmic-banner.svg',
