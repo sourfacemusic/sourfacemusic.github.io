@@ -128,6 +128,23 @@
     });
   });
 
+  const productGrid = document.getElementById('product-grid');
+  if (productGrid && config.payments && config.payments.products) {
+    config.payments.products.forEach((product) => {
+      const card = document.createElement('article');
+      card.className = 'card pay-card';
+      card.innerHTML = `
+        <h3>${product.name}</h3>
+        <p>${product.description || ''}</p>
+        <div class="pay-price">${product.display}</div>
+        <button class="button primary" type="button" data-pay
+          data-pay-name="${product.name}"
+          data-pay-amount="${product.amount}"
+          data-pay-desc="${product.description || ''}">Buy now</button>`;
+      productGrid.appendChild(card);
+    });
+  }
+
   const paymentStatus = new URLSearchParams(window.location.search).get('payment');
   if (paymentStatus === 'success' || paymentStatus === 'cancelled') {
     const banner = document.createElement('div');
