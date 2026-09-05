@@ -5,7 +5,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
+const STRIPE_SECRET_KEY = process.env.sourkey || process.env.STRIPE_SECRET_KEY;
 let stripe = null;
 
 if (STRIPE_SECRET_KEY) {
