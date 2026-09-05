@@ -47,6 +47,7 @@
   });
 
   document.querySelectorAll('[data-fundraiser-link]').forEach((link) => {
+    if (config.fundraiserExternalUrl) link.href = config.fundraiserExternalUrl;
     link.addEventListener('click', () => track('fundraiser_click', {
       page_path: window.location.pathname,
       link_text: link.textContent.trim()

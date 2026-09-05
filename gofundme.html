@@ -3,32 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Opening Official SOURFACEMUSIC GoFundMe</title>
+  <title>Support SOURFACEMUSIC | Official GoFundMe</title>
+  <meta http-equiv="refresh" content="0;url=support.html">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta name="referrer" content="no-referrer">
-  <meta name="theme-color" content="#0b0b0f">
-  <link rel="stylesheet" href="styles.css?v=20260720-fundraiser">
+  <meta name="theme-color" content="#090107">
+  <link rel="stylesheet" href="styles.css?v=20260720-brain">
 </head>
-<body>
+<body class="links-body">
   <main class="redirect-page">
     <section class="redirect-card">
       <span class="brand-logo redirect-logo" aria-hidden="true"></span>
       <p class="eyebrow">Official fundraiser</p>
-      <h1>Opening GoFundMe…</h1>
-      <p class="lead">You are leaving SOURFACEMUSIC and continuing to the official fundraiser hosted by GoFundMe.</p>
-      <p><a id="official-gofundme-link" class="button primary" href="https://www.gofundme.com/f/help-save-our-kids-before-the-streets-get-them-first" rel="noopener noreferrer nofollow">Continue to GoFundMe</a></p>
-      <p class="small"><a href="support.html">Return to the support page</a></p>
+      <h1>Redirecting…</h1>
+      <p class="lead">The fundraiser gateway is now the support page.</p>
+      <p><a class="button primary" href="support.html">Go to support page</a></p>
     </section>
   </main>
-  <script src="site-config.js"></script>
-  <script>
-    (() => {
-      const fallbackGoFundMeLink = 'https://www.gofundme.com/f/help-save-our-kids-before-the-streets-get-them-first';
-      const officialGoFundMeLink = (window.SFM_CONFIG && window.SFM_CONFIG.fundraiserExternalUrl) || fallbackGoFundMeLink;
-      const link = document.getElementById('official-gofundme-link');
-      if (link) link.href = officialGoFundMeLink;
-      window.setTimeout(() => window.location.replace(officialGoFundMeLink), 500);
-    })();
-  </script>
+  <script>window.location.replace('support.html');</script>
 </body>
 </html>
