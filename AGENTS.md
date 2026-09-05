@@ -20,5 +20,9 @@ Edit HTML/CSS/JS files directly; changes appear on reload (no live-reload dev se
 - `styles.css` / `playlist.css` — styling
 - `assets/` — SVG artwork
 
+## Brand rules (always follow)
+- **Always write "SOURFACEMUSIC" as one word.** Never split it, abbreviate it mid-sentence, or let it wrap/break across lines. The brand name stays together everywhere: headers, headings, body copy, meta tags, JSON-LD, social text. CSS already has `.brand strong{white-space:nowrap}` — preserve it.
+- The full byline is: SOURFACEMUSIC — David "SOUR FACE" Hill · DJ · Producer · Engineer · Educator.
+
 ## Verification
 `curl -sf -H "Host: external-preview.example.com" http://localhost:3000/` returns the homepage.
