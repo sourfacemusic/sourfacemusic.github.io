@@ -16,6 +16,15 @@ window.SFM_CONFIG = Object.freeze({
     square: 'assets/sfm-cosmic-square.svg',
     story: 'assets/sfm-cosmic-story.svg'
   },
+  payments: {
+    currency: 'usd',
+    services: [
+      { name: 'Beat Production', amount: 15000, display: '$150', description: 'Custom beat production session' },
+      { name: 'Remix Blends', amount: 10000, display: '$100', description: 'Remix and blend production' },
+      { name: 'Artist Development', amount: 20000, display: '$200', description: 'Artist development consultation' },
+      { name: 'Session & Mix Prep', amount: 7500, display: '$75', description: 'Session and mix preparation' }
+    ]
+  },
   socials: {
     youtube: 'https://www.youtube.com/@SOURFACEMUSIC4LIFE',
     tiktok: 'https://www.tiktok.com/@sourfacemusic',

@@ -95,6 +95,51 @@
     });
   });
 
+  document.querySelectorAll('[data-pay]').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const originalText = button.textContent;
+      button.disabled = true;
+      button.textContent = 'Redirecting…';
+      try {
+        const response = await fetch('/api/create-checkout-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: button.dataset.payName,
+            amount: parseInt(button.dataset.payAmount, 10),
+            description: button.dataset.payDesc,
+            origin: window.location.origin
+          })
+        });
+        const data = await response.json();
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          alert(data.error || 'Payment could not be started. Please try again or contact us.');
+          button.disabled = false;
+          button.textContent = originalText;
+        }
+      } catch (error) {
+        console.error('Checkout failed:', error);
+        alert('Payment could not be started. Please try again or call us.');
+        button.disabled = false;
+        button.textContent = originalText;
+      }
+    });
+  });
+
+  const paymentStatus = new URLSearchParams(window.location.search).get('payment');
+  if (paymentStatus === 'success' || paymentStatus === 'cancelled') {
+    const banner = document.createElement('div');
+    banner.className = 'payment-banner ' + paymentStatus;
+    banner.innerHTML = paymentStatus === 'success'
+      ? "<strong>Payment received.</strong> Thank you — we'll be in touch shortly."
+      : '<strong>Payment cancelled.</strong> No charge was made. Ready when you are.';
+    document.body.prepend(banner);
+    window.setTimeout(() => banner.remove(), 6000);
+    history.replaceState(null, '', window.location.pathname);
+  }
+
   const bookingForm = document.getElementById('booking-form');
   if (bookingForm) {
     bookingForm.addEventListener('submit', async (event) => {
