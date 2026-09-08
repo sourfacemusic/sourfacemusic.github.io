@@ -1,0 +1,22 @@
+# This repository is a plain static website (HTML/CSS/JS) with no Jekyll
+# sources. GitHub's legacy "pages build and deployment" job was configured
+# with a Pages source folder of "docs/", which does not exist, causing the
+# build to fail with:
+#   Jekyll::Converters::Scss ... No such file or directory @ dir_chdir0 -
+#   /github/workspace/docs
+# Explicitly point Jekyll at the repository root (where index.html lives) and
+# disable processing so the site is served as-is.
+source: "."
+destination: "./_site"
+theme: null
+plugins: []
+exclude:
+  - .github
+  - legacy-backups
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+include:
+  - .well-known
+  - .nojekyll
