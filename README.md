@@ -30,6 +30,10 @@ Or set both links in one command:
 
 Do not use placeholder values such as `REAL_LINK` or `your-actual-link`; the script now blocks those.
 
+To update and publish in one command:
+
+`.\set-payment-links-and-publish.ps1 -StripeUrl "https://buy.stripe.com/your-real-link" -BluevineUrl "https://your-real-bluevine-public-link"`
+
 Social profile copy is stored in **`SOCIAL_MEDIA.md`**.
 
 ## Artwork
