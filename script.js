@@ -35,6 +35,40 @@
     if (network && config.socials && config.socials[network]) link.href = config.socials[network];
   });
 
+  const isPublicPaymentUrl = (url) => {
+    if (typeof url !== 'string') return false;
+    const normalized = url.trim().toLowerCase();
+    if (!normalized.startsWith('https://')) return false;
+    try {
+      const parsed = new URL(normalized);
+      const host = parsed.hostname.toLowerCase();
+      const path = parsed.pathname.toLowerCase();
+      const combined = `${host}${path}`;
+      if (!host.includes('.')) return false;
+      if (combined.match(/(your[-_]|real[-_]?link|public[-_]?link|placeholder|example)/i)) return false;
+      if (host === 'dashboard.stripe.com') return false;
+      if (host === 'app.bluevine.com' && path.startsWith('/dashboard')) return false;
+      return true;
+    } catch {
+      return false;
+    }
+  };
+
+  document.querySelectorAll('[data-payment-link]').forEach((link) => {
+    const provider = link.dataset.paymentLink;
+    const configured = provider && config.paymentLinks ? config.paymentLinks[provider] : '';
+    if (isPublicPaymentUrl(configured)) {
+      link.href = configured;
+      return;
+    }
+    const fallback = link.dataset.paymentFallback;
+    if (fallback) {
+      link.href = fallback;
+      return;
+    }
+    link.remove();
+  });
+
   const track = (eventName, values = {}) => {
     if (typeof window.gtag === 'function') window.gtag('event', eventName, values);
   };

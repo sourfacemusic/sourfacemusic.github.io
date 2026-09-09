@@ -1,4 +1,4 @@
-window.SFM_CONFIG = Object.freeze({
+﻿window.SFM_CONFIG = Object.freeze({
   brand: 'SOURFACEMUSIC',
   shortName: 'S.F.M.',
   tagline: 'Music production, DJ culture, artist development and youth education.',
@@ -7,6 +7,10 @@ window.SFM_CONFIG = Object.freeze({
   linksPage: 'https://sourfacemusic.github.io/links.html',
   fundraiserPage: 'https://sourfacemusic.github.io/support.html',
   fundraiserExternalUrl: 'https://www.gofundme.com/f/help-save-our-kids-before-the-streets-get-them-first',
+  paymentLinks: {
+    stripe: 'https://stripe.com/payments/payment-links',
+    bluevine: 'https://www.bluevine.com/'
+  },
   email: 'sourfacemusic@gmail.com',
   phoneDisplay: '(646) 286-7210',
   phoneHref: '+16462867210',
@@ -19,8 +23,12 @@ window.SFM_CONFIG = Object.freeze({
   socials: {
     youtube: 'https://www.youtube.com/@SOURFACEMUSIC4LIFE',
     tiktok: 'https://www.tiktok.com/@sourfacemusic',
-    soundcloud: 'https://soundcloud.com/sourfacemusic/',
+    soundcloud: 'https://soundcloud.com/sourfacemusic',
     facebook: 'https://www.facebook.com/sfacemusic/',
-    vimeo: 'https://vimeo.com/sourfacemusic/'
+    vimeo: 'https://vimeo.com/sourfacemusic'
   }
 });
+
+
+
+

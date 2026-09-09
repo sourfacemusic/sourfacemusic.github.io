@@ -29,9 +29,9 @@ https://sourfacemusic.github.io/support.html
 - Website: https://sourfacemusic.github.io/
 - YouTube: https://www.youtube.com/@SOURFACEMUSIC4LIFE
 - TikTok: https://www.tiktok.com/@sourfacemusic
-- SoundCloud: https://soundcloud.com/sourfacemusic/
+- SoundCloud: https://soundcloud.com/sourfacemusic
 - Facebook: https://www.facebook.com/sfacemusic/
-- Vimeo: https://vimeo.com/sourfacemusic/
+- Vimeo: https://vimeo.com/sourfacemusic
 
 ## Recommended profile setup
 
