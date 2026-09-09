@@ -12,8 +12,14 @@
     bluevine: 'https://www.bluevine.com/'
   },
   email: 'sourfacemusic@gmail.com',
-  phoneDisplay: '(212) 368-9540',
-  phoneHref: '+12123689540',
+  phoneDisplay: '(917) 675-8184',
+  phoneHref: '+19176758184',
+  phones: {
+    cellDisplay: '(917) 675-8184',
+    cellHref: '+19176758184',
+    businessDisplay: '(212) 368-9540',
+    businessHref: '+12123689540'
+  },
   location: 'New York, NY',
   artwork: {
     banner: 'assets/sfm-cosmic-banner.svg',
@@ -28,6 +34,4 @@
     vimeo: 'https://vimeo.com/sourfacemusic'
   }
 });
-
-
 

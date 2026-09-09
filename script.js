@@ -18,12 +18,30 @@
     else if (!link.querySelector('strong')) link.textContent = config.email;
   });
 
-  document.querySelectorAll('[data-config-phone]').forEach((link) => {
-    if (!config.phoneHref) return;
-    link.href = `tel:${config.phoneHref}`;
+  const applyPhoneLink = (link, phoneHref, phoneDisplay) => {
+    if (!phoneHref || !phoneDisplay) return;
+    link.href = `tel:${phoneHref}`;
     const target = link.querySelector('span');
-    if (target && config.phoneDisplay) target.textContent = config.phoneDisplay;
-    else if (!link.querySelector('strong') && config.phoneDisplay) link.textContent = config.phoneDisplay;
+    if (target) target.textContent = phoneDisplay;
+    else if (!link.querySelector('strong')) link.textContent = phoneDisplay;
+  };
+
+  document.querySelectorAll('[data-config-phone-cell]').forEach((link) => {
+    const phoneHref = config.phones && config.phones.cellHref;
+    const phoneDisplay = config.phones && config.phones.cellDisplay;
+    applyPhoneLink(link, phoneHref, phoneDisplay);
+  });
+
+  document.querySelectorAll('[data-config-phone-business]').forEach((link) => {
+    const phoneHref = config.phones && config.phones.businessHref;
+    const phoneDisplay = config.phones && config.phones.businessDisplay;
+    applyPhoneLink(link, phoneHref, phoneDisplay);
+  });
+
+  document.querySelectorAll('[data-config-phone]').forEach((link) => {
+    const phoneHref = (config.phones && config.phones.cellHref) || config.phoneHref;
+    const phoneDisplay = (config.phones && config.phones.cellDisplay) || config.phoneDisplay;
+    applyPhoneLink(link, phoneHref, phoneDisplay);
   });
 
   document.querySelectorAll('[data-config-location]').forEach((node) => {
