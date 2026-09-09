@@ -33,16 +33,6 @@ Social profile copy is stored in **`SOCIAL_MEDIA.md`**.
 5. Publishes the complete repository to GitHub Pages.
 6. Checks the live homepage, fundraiser page, official-links page and configuration file after deployment.
 
-## One-time GitHub Pages activation
-
-GitHub keeps the publishing-source control in private repository settings. Open:
-
-https://github.com/sourfacemusic/sourfacemusic.github.io/settings/pages
-
-Under **Build and deployment**, set **Source** to **GitHub Actions**. After that one selection, GitHub Desktop pushes and repository edits publish automatically.
-
-Tracking issue: https://github.com/sourfacemusic/sourfacemusic.github.io/issues/1
-
 ## GitHub Desktop workflow
 
 1. Open repository `sourfacemusic.github.io`.

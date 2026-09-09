@@ -11,16 +11,7 @@ This repository is the single source of truth for the SOURFACEMUSIC public websi
 
 ## Current status
 
-The website has been consolidated and rebuilt in GitHub. The repository contains a permanent publish-and-verify workflow. The public URL will continue returning a platform-level 404 until the repository's private Pages setting is changed once to **GitHub Actions**.
-
-## One-time activation
-
-1. Open `https://github.com/sourfacemusic/sourfacemusic.github.io/settings/pages`.
-2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
-3. Open `https://github.com/sourfacemusic/sourfacemusic.github.io/actions/workflows/pages.yml`.
-4. Select **Run workflow**, keep `main`, and run it.
-
-After this one-time selection, no recurring manual publish step is required.
+The website has been consolidated and rebuilt in GitHub. The repository uses a permanent publish-and-verify workflow through GitHub Actions.
 
 ## Automatic workflow
 
@@ -105,7 +96,7 @@ Never commit or upload:
 
 GitHub is the public website control center, not a vault for private account records.
 
-## Final verification after activation
+## Publish verification checklist
 
 - `/` returns HTTP 200
 - `/links.html` opens
@@ -115,5 +106,3 @@ GitHub is the public website control center, not a vault for private account rec
 - artwork loads on desktop and mobile
 - booking form sends or opens the email fallback
 - GitHub Actions publish-and-verify workflow is green
-
-Tracking issue: `https://github.com/sourfacemusic/sourfacemusic.github.io/issues/1`
