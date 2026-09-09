@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
-  [Parameter(Mandatory = $true)][string]$StripeUrl,
-  [Parameter(Mandatory = $true)][string]$BluevineUrl,
+  [string]$StripeUrl,
+  [string]$BluevineUrl,
   [switch]$SkipDeployWait
 )
 
@@ -15,7 +15,10 @@ if (-not (Test-Path -LiteralPath $setterScript)) {
 
 Push-Location $repoRoot
 try {
-  & $setterScript -StripeUrl $StripeUrl -BluevineUrl $BluevineUrl
+  $setterParams = @{}
+  if (-not [string]::IsNullOrWhiteSpace($StripeUrl)) { $setterParams.StripeUrl = $StripeUrl }
+  if (-not [string]::IsNullOrWhiteSpace($BluevineUrl)) { $setterParams.BluevineUrl = $BluevineUrl }
+  & $setterScript @setterParams
 
   $siteConfigStatus = git --no-pager status --porcelain -- site-config.js
   if ([string]::IsNullOrWhiteSpace($siteConfigStatus)) {

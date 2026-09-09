@@ -34,6 +34,10 @@ To update and publish in one command:
 
 `.\set-payment-links-and-publish.ps1 -StripeUrl "https://buy.stripe.com/your-real-link" -BluevineUrl "https://your-real-bluevine-public-link"`
 
+Or run without parameters and it will prompt you for both links:
+
+`.\set-payment-links-and-publish.ps1`
+
 Social profile copy is stored in **`SOCIAL_MEDIA.md`**.
 
 ## Artwork

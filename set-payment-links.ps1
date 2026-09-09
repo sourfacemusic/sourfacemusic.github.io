@@ -72,7 +72,9 @@ if (-not (Test-Path -LiteralPath $configPath)) {
   throw "Could not find site-config.js at $configPath"
 }
 
-$content = Get-Content -Raw -LiteralPath $configPath
+$originalContent = Get-Content -Raw -LiteralPath $configPath
+$originalNormalized = $originalContent.TrimEnd("`r", "`n") + "`r`n"
+$content = $originalContent
 $blockPattern = "(?ms)^\s*paymentLinks:\s*\{\s*stripe:\s*'(?<stripe>[^']*)',\s*bluevine:\s*'(?<bluevine>[^']*)'\s*\},?"
 $blockRegex = [regex]::new(
   $blockPattern,
@@ -123,6 +125,13 @@ if ($blockMatch.Success) {
     },
     1
   )
+}
+
+$content = $content.TrimEnd("`r", "`n") + "`r`n"
+
+if ($content -ceq $originalNormalized) {
+  Write-Host "paymentLinks already up to date in $configPath"
+  return
 }
 
 Set-Content -LiteralPath $configPath -Value $content -Encoding UTF8
