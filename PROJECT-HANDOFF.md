@@ -67,7 +67,7 @@ The recommended single bio link is:
 ## Current contact data
 
 - Email: `sourfacemusic@gmail.com`
-- Phone: `(917) 675-8184`
+- Phone: `(212) 368-9540`
 - Location: `New York, NY`
 
 The booking form submits through FormSubmit to `sourfacemusic@gmail.com`, with a mailto fallback.
