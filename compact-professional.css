@@ -221,6 +221,51 @@ h3 {
   padding-left: 1rem;
 }
 
+.proposal-feature-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 0.7rem;
+  margin-top: 0.95rem;
+}
+
+.proposal-feature-grid figure,
+.proposal-video-card {
+  margin: 0;
+  border: 1px solid #302634;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #08060b;
+}
+
+.proposal-feature-grid img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.proposal-feature-grid figcaption {
+  padding: 0.5rem 0.6rem;
+  font-size: 0.8rem;
+  color: #cbbcc6;
+}
+
+.proposal-video-card {
+  padding: 0.7rem;
+}
+
+.proposal-video-card h4 {
+  margin: 0 0 0.45rem;
+}
+
+.proposal-video-card video {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #302634;
+  background: #000;
+  aspect-ratio: 16 / 9;
+}
+
 .proposal-gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -248,6 +293,24 @@ h3 {
   color: #cbbcc6;
 }
 
+.proposal-gallery--full {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.proposal-gallery--full img {
+  object-fit: contain;
+  background: #050509;
+}
+
+.proposal-banner {
+  width: 100%;
+  display: block;
+  margin-top: 0.95rem;
+  border: 1px solid #302634;
+  border-radius: 10px;
+  background: #08060b;
+}
+
 .proposal-note {
   margin-top: 0.65rem;
   font-size: 0.84rem;
@@ -255,9 +318,14 @@ h3 {
 }
 
 @media (max-width: 900px) {
+  .proposal-feature-grid,
   .proposal-grid,
   .proposal-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .proposal-gallery--full {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -270,8 +338,13 @@ h3 {
     padding: 12px 13px;
   }
 
+  .proposal-feature-grid,
   .proposal-grid,
   .proposal-gallery {
     grid-template-columns: 1fr;
+  }
+
+  .proposal-gallery--full {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
