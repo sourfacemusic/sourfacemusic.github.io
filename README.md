@@ -48,6 +48,14 @@ If PowerShell blocks scripts, use:
 
 `powershell -ExecutionPolicy Bypass -File ".\check-site-links.ps1"`
 
+Or use the launcher (no execution-policy friction):
+
+`.\check-site-links.cmd`
+
+From any folder, this always works:
+
+`& "C:\Users\sourf\.copilot\repos\copilot-worktrees\sourfacemusic.github.io\sourfacemusic-musical-chainsaw\check-site-links.cmd"`
+
 Use `-ShowAll` for full per-link output.
 
 Social profile copy is stored in **`SOCIAL_MEDIA.md`**.
