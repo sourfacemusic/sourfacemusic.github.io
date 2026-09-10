@@ -38,6 +38,18 @@ Or run without parameters and it will prompt you for both links:
 
 `.\set-payment-links-and-publish.ps1`
 
+## One-command full link audit
+
+Run this to check all site links end-to-end (internal pages, assets, external URLs, and payment links):
+
+`.\check-site-links.ps1`
+
+If PowerShell blocks scripts, use:
+
+`powershell -ExecutionPolicy Bypass -File ".\check-site-links.ps1"`
+
+Use `-ShowAll` for full per-link output.
+
 Social profile copy is stored in **`SOCIAL_MEDIA.md`**.
 
 ## Artwork
