@@ -221,51 +221,6 @@ h3 {
   padding-left: 1rem;
 }
 
-.proposal-feature-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-  gap: 0.7rem;
-  margin-top: 0.95rem;
-}
-
-.proposal-feature-grid figure,
-.proposal-video-card {
-  margin: 0;
-  border: 1px solid #302634;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #08060b;
-}
-
-.proposal-feature-grid img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  display: block;
-}
-
-.proposal-feature-grid figcaption {
-  padding: 0.5rem 0.6rem;
-  font-size: 0.8rem;
-  color: #cbbcc6;
-}
-
-.proposal-video-card {
-  padding: 0.7rem;
-}
-
-.proposal-video-card h4 {
-  margin: 0 0 0.45rem;
-}
-
-.proposal-video-card video {
-  width: 100%;
-  border-radius: 8px;
-  border: 1px solid #302634;
-  background: #000;
-  aspect-ratio: 16 / 9;
-}
-
 .proposal-gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -302,13 +257,36 @@ h3 {
   background: #050509;
 }
 
-.proposal-banner {
-  width: 100%;
-  display: block;
-  margin-top: 0.95rem;
-  border: 1px solid #302634;
-  border-radius: 10px;
-  background: #08060b;
+.proposal-gallery--compact {
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: 0.35rem;
+  max-width: 640px;
+}
+
+.proposal-gallery--compact figure {
+  border-radius: 8px;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.proposal-gallery--compact figure:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent, #ff4b8b);
+}
+
+.proposal-gallery--compact img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: #050509;
+}
+
+.proposal-gallery--compact figcaption {
+  padding: 0.2rem 0.25rem;
+  font-size: 0.6rem;
+  text-align: center;
+  color: #cbbcc6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .proposal-note {
@@ -318,7 +296,6 @@ h3 {
 }
 
 @media (max-width: 900px) {
-  .proposal-feature-grid,
   .proposal-grid,
   .proposal-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -326,6 +303,10 @@ h3 {
 
   .proposal-gallery--full {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .proposal-gallery--compact {
+    grid-template-columns: repeat(auto-fill, minmax(55px, 1fr));
   }
 }
 
@@ -338,7 +319,6 @@ h3 {
     padding: 12px 13px;
   }
 
-  .proposal-feature-grid,
   .proposal-grid,
   .proposal-gallery {
     grid-template-columns: 1fr;
@@ -346,5 +326,9 @@ h3 {
 
   .proposal-gallery--full {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .proposal-gallery--compact {
+    grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
   }
 }
