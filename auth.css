@@ -1,0 +1,14 @@
+.sfm-auth { margin-top: 1.25rem; }
+.sfm-auth button {
+  color: var(--fg, #f5f5f5);
+  background: var(--bg, #050509);
+  border: 1px solid var(--accent, #ff4b8b);
+  border-radius: 999px;
+  padding: .55rem 1rem;
+  font: inherit;
+  cursor: pointer;
+}
+.sfm-auth button:disabled { opacity: .6; cursor: default; }
+.sfm-auth button:focus-visible { outline: 2px solid #ffb3da; outline-offset: 3px; }
+.sfm-auth [hidden] { display: none; }
+#sfm-auth-status { font-size: .875rem; }

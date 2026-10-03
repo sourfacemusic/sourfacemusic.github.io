@@ -125,6 +125,7 @@
     gtag('js', new Date());
     gtag('config', 'G-XMKLD6MMHX');
   </script>
+  <link rel="stylesheet" href="auth.css" />
 </head>
 
 <body class="compact-home">
@@ -141,6 +142,11 @@
       <a href="links.html">All Links</a>
       <a href="support.html">Support</a>
     </nav>
+    <div class="sfm-auth" aria-label="Account">
+      <button id="sfm-login" type="button" disabled>Sign in</button>
+      <button id="sfm-logout" type="button" hidden>Sign out</button>
+      <p id="sfm-auth-status" role="status" aria-live="polite">Loading sign-in…</p>
+    </div>
   </header>
 
   <main>
@@ -316,5 +322,8 @@
 
   <script src="site-config.js"></script>
   <script src="script.js?v=20260720-brain" defer></script>
+  <script src="auth-config.js" defer></script>
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/2.28.1/auth0-spa-js.production.js" defer></script>
+  <script src="auth.js" defer></script>
 </body>
 </html>
