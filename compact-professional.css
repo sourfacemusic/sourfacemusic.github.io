@@ -237,7 +237,9 @@ h3 {
 }
 
 .proposal-gallery img {
+  display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
@@ -332,3 +334,44 @@ h3 {
     grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
   }
 }
+
+/* Keep artwork proportional and compact, including images with HTML height attributes. */
+img {
+  max-width: 100%;
+  height: auto;
+}
+.proposal-gallery--compact,
+.proposal-gallery--full {
+  grid-template-columns: repeat(auto-fill, minmax(min(120px, 100%), 1fr));
+}
+.proposal-gallery--compact img,
+.proposal-gallery--full img {
+  height: auto;
+  max-height: 180px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+.proposal-gallery--compact figcaption {
+  padding: 0.4rem;
+  font-size: 0.75rem;
+  white-space: normal;
+}
+.feature-art,
+.cosmic-banner img {
+  width: min(100%, 480px);
+  max-height: 280px;
+  object-fit: contain;
+  margin-inline: auto;
+}
+.support-logo {
+  width: min(100%, 220px);
+  margin-inline: auto;
+}
+@media (max-width: 640px) {
+  .proposal-gallery--compact img,
+  .proposal-gallery--full img {
+    max-height: 160px;
+  }
+}
+
+.links-avatar { height: 120px; }
