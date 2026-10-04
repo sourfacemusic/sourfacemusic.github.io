@@ -1,0 +1,32 @@
+SOURFACEMUSIC — Official GoFundMe
+Saved October 4, 2026
+Campaign: Help Save Our Kids Before The Streets Get Them First
+Organizer: David Hill / Academy of Hip-Hop Culture NYC
+GoFundMe: https://www.gofundme.com/f/help-save-our-kids-before-the-streets-get-them-first
+Website: https://sourfacemusic.github.io/
+
+PUBLIC CAMPAIGN STORY
+
+Help Us Save Our Kids Before the Streets Do
+Some of these kids are really not bad kids at all. They are scared kids. Lost kids. Kids trying to survive the only way they think they can.
+They out here robbing people just to get high & studio time, chasing a dream with no safe path to reach it. Too many girls are following those same guys & getting pregnant with nowhere to go, no guidance, no support, and don’t feel safe enough to talk about it either. These are the same kids that was left sometimes in strange places crying, hungry, dirty while their mothers were out there shaking what momma gave her. Now they’re angry & grown going through it, That’s why a lot of adults are scared of these kids now and don’t want to help them with their future.
+That is why The Academy of Hip-Hop Culture matters.
+If these kids had a real place to go after school, a place that was safe, welcoming, and built for them, a lot of this pain could be prevented. If they had a place where they could learn a skill not out there learning how to kill, there’ll learn recording, music, production, and real skills from people who come from the same neighborhoods and lived through the same struggles, they would not have to risk their lives in the streets just to feel like they belong somewhere.
+At The Academy of Hip-Hop Culture, we want mothers to have peace too. We want a mother to get a phone call saying:
+“Your child is here. They’re safe. They’re fed. Don’t worry. We got them.”
+That means everything.
+We want these young people to have food, guidance, training, and a safe place to breathe. We want them to know somebody cares. We want parents to know where their children are at all times. We want to help stop the fear, the confusion, the hunger, the pressure, and the bad choices that come from having nowhere to turn.
+We are from the same hood. We know what this looks like. We know what it feels like. And now we are trying to give back in a real way.
+But we cannot do it alone.
+We need your help to build this space for our youth. Your donation will help make a change. So please help us give these kids another option. Help us give them a place to go before the streets get to them first.
+Stand with us. Give back with us. Help us save lives through culture, structure, and love. and learn a real trade from experienced pioneers in the culture.
+We are currently seeking donations for: computers, DJ equipment, audio gear, recording equipment, and training technology.
+Your support helps us build safety, opportunity, discipline, and hope for the next generation.
+
+
+Learn more about David Hill, SOURFACEMUSIC and our youth programs:
+https://sourfacemusic.github.io/
+
+
+
+Connection: Website fundraiser links use fundraiserExternalUrl in site-config.js. The public GoFundMe story links back to the website. Stripe checkout and Bluevine payout setup must be verified separately; bank details must never be stored in this public repository.

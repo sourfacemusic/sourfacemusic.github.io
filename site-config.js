@@ -8,8 +8,8 @@
   fundraiserPage: 'https://sourfacemusic.github.io/support.html',
   fundraiserExternalUrl: 'https://www.gofundme.com/f/help-save-our-kids-before-the-streets-get-them-first',
   paymentLinks: {
-    stripe: 'https://stripe.com/payments/payment-links',
-    bluevine: 'https://www.bluevine.com/'
+    stripe: '',
+    bluevine: ''
   },
   email: 'sourfacemusic@gmail.com',
   phoneDisplay: '(917) 675-8184',

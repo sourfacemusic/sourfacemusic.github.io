@@ -53,6 +53,10 @@ function Assert-PublicPaymentUrl {
     throw "$Provider URL looks like placeholder text. Use your real public link."
   }
 
+  if ($urlHost -in @('stripe.com', 'www.stripe.com', 'bluevine.com', 'www.bluevine.com', 'app.bluevine.com', 'dashboard.stripe.com')) {
+    throw 'Use a verified public checkout link, not a provider homepage or account dashboard.'
+  }
+
   if ($Provider -eq 'stripe' -and $urlHost -eq 'dashboard.stripe.com') {
     throw "Stripe dashboard URL is private. Use a public Stripe payment link (for example https://buy.stripe.com/... or https://pay.stripe.com/...)."
   }

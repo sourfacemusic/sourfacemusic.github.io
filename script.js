@@ -64,7 +64,8 @@
       const combined = `${host}${path}`;
       if (!host.includes('.')) return false;
       if (combined.match(/(your[-_]|real[-_]?link|public[-_]?link|placeholder|example)/i)) return false;
-      if (host === 'dashboard.stripe.com') return false;
+      if (host === 'stripe.com' || host === 'www.stripe.com' || host === 'dashboard.stripe.com') return false;
+      if (host === 'bluevine.com' || host === 'www.bluevine.com' || host === 'app.bluevine.com') return false;
       if (host === 'app.bluevine.com' && path.startsWith('/dashboard')) return false;
       return true;
     } catch {
@@ -77,9 +78,10 @@
     const configured = provider && config.paymentLinks ? config.paymentLinks[provider] : '';
     if (isPublicPaymentUrl(configured)) {
       link.href = configured;
+      link.hidden = false;
       return;
     }
-    const fallback = link.dataset.paymentFallback;
+    const fallback = null; // Never label a fallback page as a working payment connection.
     if (fallback) {
       link.href = fallback;
       return;
