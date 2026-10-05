@@ -30,3 +30,11 @@ body.professional-home{background-image:linear-gradient(rgba(8,6,5,.25),rgba(8,6
 .bio-copy{color:var(--muted)}.award,.recognition-grid img{background:rgba(30,23,19,.83)}.award hr{border-color:var(--line)}
 .investor-panel{background:rgba(20,15,12,.85);color:var(--ink)}.investor-panel input,.investor-panel textarea{background:#19130f;color:#f6eee6;border-color:#87634b}.investor-panel button{background:#a34423;color:white}
 
+
+/* Consistent book presentation, preserving supplied artwork proportions. */
+#books-audiobooks .screenplay-feature{padding:clamp(18px,4vw,30px);margin-top:28px}
+#books-audiobooks .project-cover{float:none;display:block;margin:20px 0 24px;max-width:800px;text-align:center;background:rgba(0,0,0,.22);border-radius:4px}
+#books-audiobooks .project-cover img{width:100%;height:auto;max-height:480px;object-fit:contain;margin:auto}
+#books-audiobooks .screenplay-feature>p{max-width:800px;line-height:1.75}
+#books-audiobooks .book-promo{margin:20px 0 24px}
+@media(max-width:640px){#books-audiobooks .project-cover img{max-height:380px}}
